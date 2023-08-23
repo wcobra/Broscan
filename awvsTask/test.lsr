@@ -1,0 +1,85 @@
+{
+    "actions": [
+        {
+            "parameters": {
+            },
+            "target": "http://testphp.vulnweb.com/",
+            "timeout": 20000,
+            "type": "navigate"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"home\""
+            },
+            "target": "//DIV[@id=\"globalNav\"]/TABLE/TBODY/TR/TD[1]/A[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"Browse categories\""
+            },
+            "target": "//DIV[@id=\"sectionLinks\"]/UL/LI[1]/A",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"Browse artists\""
+            },
+            "target": "//DIV[@id=\"sectionLinks\"]/UL/LI[2]/A",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"Your cart\""
+            },
+            "target": "//DIV[@id=\"sectionLinks\"]/UL/LI[3]/A",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"Signup\""
+            },
+            "target": "//DIV[@id=\"sectionLinks\"]/UL/LI[4]/A",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "INPUT named uname",
+                "value": "哈哈哈"
+            },
+            "target": "//DIV[@id=\"content\"]/DIV[1]/FORM/TABLE/TBODY/TR[1]/TD[2]/INPUT",
+            "timeout": 20000,
+            "type": "change"
+        },
+        {
+            "parameters": {
+                "friendly": "INPUT named pass",
+                "password": true,
+                "value": "test"
+            },
+            "target": "//DIV[@id=\"content\"]/DIV[1]/FORM/TABLE/TBODY/TR[2]/TD[2]/INPUT",
+            "timeout": 20000,
+            "type": "change"
+        },
+        {
+            "parameters": {
+                "friendly": "login"
+            },
+            "target": "//DIV[@id=\"content\"]/DIV[1]/FORM/TABLE/TBODY/TR[3]/TD/INPUT",
+            "timeout": 20000,
+            "type": "click"
+        }
+    ],
+    "detection": {
+        "pattern": "200",
+        "request": "GET http://testphp.vulnweb.com/images/logo.gif HTTP/1.1\n\n",
+        "type": "statusis"
+    },
+    "restrictions": [
+    ]
+}
